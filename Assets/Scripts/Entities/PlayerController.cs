@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
             MovementController.Direction= MovementDirection.Up;
 
         if (movex == 0 && movey == 0)
-            MovementController.Direction = MovementDirection.None; 
+            MovementController.Direction = MovementDirection.None;
+
+        //todo; proper attack key. 
+        MovementController.Attack(); 
     }
 }

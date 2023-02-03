@@ -8,7 +8,19 @@ public class MovementController : MonoBehaviour
 {
     public AttributeComponent Attributes; 
 
-    public MovementDirection Direction;
+
+    MovementDirection direction;
+    public MovementDirection Direction {
+        get { return direction; }
+        set
+        {
+            if (value != MovementDirection.None)
+                FacingDirection = value;
+            direction = value;
+
+        } }
+
+    public MovementDirection FacingDirection; 
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +51,19 @@ public class MovementController : MonoBehaviour
             default: break;
 
         }
+    }
+
+    public void Attack()
+    {
+       var hits =  Physics2D.BoxCastAll(transform.position, new Vector2(1, 1), 0, FacingDirection.VectorFromDirection(), Attributes.AttackDistance); 
+        foreach(var hit in hits)
+        {
+            var attribute = hit.rigidbody.gameObject.GetComponent<AttributeComponent>();
+            if (attribute.Faction != Attributes.Faction)
+            {
+                attribute.damage(Attributes.AttackPower); 
+            }
+        }
+
     }
 }

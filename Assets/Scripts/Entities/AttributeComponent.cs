@@ -19,6 +19,8 @@ public class AttributeComponent : MonoBehaviour
     public int AttackPower;
     public float MovementSpeed;
 
+    public float AttackDistance; 
+
     public faction Faction; 
 
     public OnDeath OnDeath;
@@ -52,6 +54,8 @@ public class AttributeComponent : MonoBehaviour
     }
     public void damage(int damage){
         //Check our damage
+        Debug.Log($"{gameObject.name} has taken {damage} damage"); 
+
         CurrentHitPoints -= damage;
         OnDamage(); 
 
