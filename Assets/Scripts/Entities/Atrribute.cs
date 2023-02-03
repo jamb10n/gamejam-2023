@@ -21,22 +21,29 @@ public class Atrribute : MonoBehaviour
     }
 
     public void healing(int hpIncAmmount){
+        //Checks health ammout
         int Health= hpIncAmmount + CurrentHitPoints;
+        //are we going over the maximum ammount?
         if(Health>MaxHitPoints){
+            //set to our maximum then
             CurrentHitPoints=MaxHitPoints;
         }
         else{
+            //Set to the new health ammount
             CurrentHitPoints=Health;
         }
     }
     public void healing(int damage){
+        //Check our damage
         int Health= CurrentHitPoints - damage;
         if(Health <= 0){
             // raise a game over alert
             
         }
         else{
+            //set our new health to the damaged amount
             CurrentHitPoints=Health;
+            //raise animation
         }
     }
 
