@@ -5,9 +5,10 @@ using UnityEngine;
 public class Atrribute : MonoBehaviour
 {
     private int _currentHitPoints, _maxHitPoints, _attackPower;
-    private float movementSpeed;
+    private float _movementSpeed;
     private enum faction{
-
+        Enemy,
+        NPC
     };
     // Start is called before the first frame update
     void Start()
@@ -37,9 +38,9 @@ public class Atrribute : MonoBehaviour
         get{return _attackPower;}
         set{_attackPower=value;}
     }
-    public float movementSpeed{
-        get{return movementSpeed;}
-        set{movementSpeed=value;}
+    public float MovementSpeed{
+        get{return _movementSpeed;}
+        set{_movementSpeed=value;}
     }
 
 
