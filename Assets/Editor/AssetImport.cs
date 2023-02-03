@@ -40,6 +40,7 @@ public class AssetImport : MonoBehaviour
     [MenuItem("AssetImport/Load Scenes")]
     public static void LoadScenes()
     {
+        var filesall = new List<string>();
         using (var gameManagerobj = new PrefabUtility.EditPrefabContentsScope("Assets/Prefabs/GameManager.prefab"))
         {
             var gamemanager = gameManagerobj.prefabContentsRoot.GetComponent<GameManager>();
@@ -50,12 +51,24 @@ public class AssetImport : MonoBehaviour
                 var files = Directory.GetFiles(d).Where(x => Path.GetExtension(x) == ".unity").ToList();
                 foreach (var f in files)
                 {
+                    filesall.Add(f); 
                     gamemanager.Scenes.Add(Path.GetFileNameWithoutExtension(f)); 
                 }
             }
 
                 
         }
+
+        //now need to make sure Unity loads the scenes into the game. 
+
+        List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
+        var menu = filesall.FirstOrDefault(z => Path.GetFileName(z) == "MainMenu.unity");
+        scenes.Add(new EditorBuildSettingsScene(menu, true)); 
+        filesall.Remove(menu);
+        foreach (var f in filesall)
+            scenes.Add(new EditorBuildSettingsScene(f, true)); 
+        EditorBuildSettings.scenes = scenes.ToArray();
+         
     }
         
 }

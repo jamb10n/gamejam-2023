@@ -21,5 +21,7 @@ public class MapScript : MonoBehaviour
     public IEnumerator LoadMap()
     {
         yield return null;
+
+        //For anything that might need the map script to handle. 
     }
 }
