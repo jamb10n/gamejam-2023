@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Atrribute : MonoBehaviour
 {
+    private int _currentHitPoints,_maxHitPoints,_attackPower;
+    private float _movementSpeed;
     enum faction{
         Enemy,
         NPC
@@ -33,7 +35,7 @@ public class Atrribute : MonoBehaviour
             CurrentHitPoints=Health;
         }
     }
-    public void healing(int damage){
+    public void damage(int damage){
         //Check our damage
         int Health= CurrentHitPoints - damage;
         if(Health <= 0){
@@ -48,20 +50,20 @@ public class Atrribute : MonoBehaviour
     }
 
     public int CurrentHitPoints{
-        get{}
-        set{}
+        get{return _currentHitPoints;}
+        set{_currentHitPoints =value;}
     }
     public int MaxHitPoints{
-        get{}
-        set{}
+        get{return _maxHitPoints;}
+        set{_maxHitPoints=value;}
     }
     public int AttackPower{
-        get{}
-        set{}
+        get{return _attackPower;}
+        set{_attackPower=value;}
     }
     public float MovementSpeed{
-        get{}
-        set{}
+        get{return _movementSpeed;}
+        set{_movementSpeed= value;}
     }
 
 
