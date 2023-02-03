@@ -5,10 +5,9 @@ using UnityEngine.UIElements;
 
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(AttributeComponent))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : BaseEntityController
 {
-    public MovementController MovementController; 
-    public AttributeComponent AttributeComponent;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
             MovementController.Direction = MovementDirection.None;
 
         //todo; proper attack key. 
-        MovementController.Attack(); 
+        if (Input.GetButtonDown("Jump"))
+            MovementController.Attack(); 
     }
 }

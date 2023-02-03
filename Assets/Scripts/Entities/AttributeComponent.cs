@@ -37,7 +37,7 @@ public class AttributeComponent : MonoBehaviour
     {
         if (CurrentHitPoints <= 0)
         {
-            OnDeath(); 
+            OnDeath.Invoke(); 
         }
     }
 
@@ -55,7 +55,7 @@ public class AttributeComponent : MonoBehaviour
     public void damage(int damage){
         //Check our damage
         CurrentHitPoints -= damage;
-        OnDamage(); 
+        OnDamage.Invoke(); 
 
         //Damage animation? 
     }
