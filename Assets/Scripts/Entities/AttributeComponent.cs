@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum faction{
+        Enemy,
+        NPC, 
+        Player
+    };
 public class AttributeComponent : MonoBehaviour
 {
 
@@ -10,10 +14,9 @@ public class AttributeComponent : MonoBehaviour
     public int AttackPower;
     public float MovementSpeed;
 
-    enum faction{
-        Enemy,
-        NPC
-    };
+    public faction Faction; 
+
+ 
     // Start is called before the first frame update
     void Start()
     {
