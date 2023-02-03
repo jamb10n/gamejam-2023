@@ -45,9 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefabs:
+  - Name: Player
+    Type: Entities
+    Prefab: {fileID: 361711584291431415, guid: 05f7f74a318dd034f80cf981d02df759, type: 3}
   - Name: Camera
     Type: Utility
     Prefab: {fileID: 5016697257274779476, guid: 87b36d3da798fc74e945d8e12531e2a8, type: 3}
+  - Name: Map
+    Type: Utility
+    Prefab: {fileID: 3520062977949289267, guid: 81cd49ca24d0d314d910d38f896d43d3, type: 3}
   Scenes:
   - SampleScene
   Player: {fileID: 0}
