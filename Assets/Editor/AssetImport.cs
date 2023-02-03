@@ -63,8 +63,11 @@ public class AssetImport : MonoBehaviour
 
         List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
         var menu = filesall.FirstOrDefault(z => Path.GetFileName(z) == "MainMenu.unity");
-        scenes.Add(new EditorBuildSettingsScene(menu, true)); 
-        filesall.Remove(menu);
+        if (menu != null)
+        {
+            scenes.Add(new EditorBuildSettingsScene(menu, true));
+            filesall.Remove(menu);
+        }
         foreach (var f in filesall)
             scenes.Add(new EditorBuildSettingsScene(f, true)); 
         EditorBuildSettings.scenes = scenes.ToArray();
