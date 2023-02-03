@@ -54,8 +54,6 @@ public class AttributeComponent : MonoBehaviour
     }
     public void damage(int damage){
         //Check our damage
-        Debug.Log($"{gameObject.name} has taken {damage} damage"); 
-
         CurrentHitPoints -= damage;
         OnDamage(); 
 
