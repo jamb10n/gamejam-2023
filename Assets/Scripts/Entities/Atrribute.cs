@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Atrribute : MonoBehaviour
 {
-    private int _currentHitPoints, _maxHitPoints, _attackPower;
-    private float _movementSpeed;
-    private enum faction{
+    enum faction{
         Enemy,
         NPC
     };
@@ -22,8 +20,24 @@ public class Atrribute : MonoBehaviour
         
     }
 
-    void healing(int hpIncAmmount){
+    public void healing(int hpIncAmmount){
         int Health= hpIncAmmount + CurrentHitPoints;
+        if(Health>MaxHitPoints){
+            CurrentHitPoints=MaxHitPoints;
+        }
+        else{
+            CurrentHitPoints=Health;
+        }
+    }
+    public void healing(int damage){
+        int Health= CurrentHitPoints - damage;
+        if(Health <= 0){
+            // raise a game over alert
+            
+        }
+        else{
+            CurrentHitPoints=Health;
+        }
     }
 
     public int CurrentHitPoints{
