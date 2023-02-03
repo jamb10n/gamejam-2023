@@ -181,6 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSpawn: {x: 0, y: 0, z: 0}
+  Background: {fileID: 3520062978190173336}
+  Walls: {fileID: 3520062978236568561}
+  ForeGround: {fileID: 3520062976794368794}
 --- !u!1 &3520062978190173339
 GameObject:
   m_ObjectHideFlags: 0
