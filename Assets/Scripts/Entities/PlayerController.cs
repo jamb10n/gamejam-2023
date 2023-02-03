@@ -4,13 +4,23 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(MovementController))]
+[RequireComponent(typeof(AttributeComponent))]
 public class PlayerController : MonoBehaviour
 {
     public MovementController MovementController; 
+    public AttributeComponent AttributeComponent;
     // Start is called before the first frame update
     void Start()
     {
         MovementController = GetComponent<MovementController>();
+        AttributeComponent= GetComponent<AttributeComponent>();
+
+        AttributeComponent.OnDeath += () =>
+        {
+            transform.DetachChildren(); 
+            Destroy(gameObject);
+            GameManager.Instance.GameOver(); 
+        };
     }
 
     // Update is called once per frame

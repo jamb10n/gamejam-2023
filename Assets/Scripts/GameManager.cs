@@ -96,4 +96,9 @@ public class GameManager : MonoBehaviour
         yield return null;
         yield return StartCoroutine(LevelLoad(Scenes[0]));  
     }
+
+    public void GameOver()
+    {
+        Debug.LogError("Game over not yet implemented"); 
+    }
 }
