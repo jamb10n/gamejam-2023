@@ -20,16 +20,16 @@ public class Atrribute : MonoBehaviour
         
     }
 
-    public void healing(int hpIncAmmount){
-        //Checks health ammout
-        int Health= hpIncAmmount + CurrentHitPoints;
-        //are we going over the maximum ammount?
+    public void healing(int hpIncAmount){
+        //Checks health amount
+        int Health= hpIncAmount + CurrentHitPoints;
+        //are we going over the maximum amount?
         if(Health>MaxHitPoints){
             //set to our maximum then
             CurrentHitPoints=MaxHitPoints;
         }
         else{
-            //Set to the new health ammount
+            //Set to the new health amount
             CurrentHitPoints=Health;
         }
     }
@@ -48,20 +48,20 @@ public class Atrribute : MonoBehaviour
     }
 
     public int CurrentHitPoints{
-        get{return _currentHitPoints;}
-        set{_currentHitPoints=value;}
+        get{}
+        set{}
     }
     public int MaxHitPoints{
-        get{return _maxHitPoints;}
-        set{_maxHitPoints=value;}
+        get{}
+        set{}
     }
     public int AttackPower{
-        get{return _attackPower;}
-        set{_attackPower=value;}
+        get{}
+        set{}
     }
     public float MovementSpeed{
-        get{return _movementSpeed;}
-        set{_movementSpeed=value;}
+        get{}
+        set{}
     }
 
 
