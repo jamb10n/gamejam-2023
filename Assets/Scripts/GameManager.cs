@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         Instance= this;
         DontDestroyOnLoad(gameObject); //one GameManager always. 
 
+        PrefabsDict = new Dictionary<string, GameObject>();
         foreach (var prefab in Prefabs)
         {
             PrefabsDict.Add(prefab.Name, prefab.Prefab); 
