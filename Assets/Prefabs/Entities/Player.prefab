@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 176408480, guid: 41ddd2cd2f3f3d44b9d6b46a395c2f52, type: 3}
+  m_Sprite: {fileID: -1684043191, guid: 41ddd2cd2f3f3d44b9d6b46a395c2f52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 0}
+  Animator: {fileID: 0}
   attackCooldownTime: 0
   FacingDirection: 0
 --- !u!114 &361711584291431417
@@ -187,7 +188,7 @@ MonoBehaviour:
   DeffPoints: 0
   MaxDeffPoints: 0
   MovementSpeed: 4
-  AttackDistance: 0.4
+  AttackDistance: 0.9
   SightRange: 0
   AttackCooldown: 10
   Faction: 2
