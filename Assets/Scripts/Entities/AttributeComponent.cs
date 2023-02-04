@@ -22,6 +22,11 @@ public class AttributeComponent : MonoBehaviour
     public float AttackDistance;
 
     /// <summary>
+    /// How far the AI can see. 
+    /// </summary>
+    public float SightRange; 
+
+    /// <summary>
     /// How long between attacks before the entity can attack again. 
     /// </summary>
     public int AttackCooldown; 
@@ -42,7 +47,7 @@ public class AttributeComponent : MonoBehaviour
     {
         if (CurrentHitPoints <= 0)
         {
-            OnDeath.Invoke(); 
+            OnDeath?.Invoke(); 
         }
     }
 
@@ -60,7 +65,7 @@ public class AttributeComponent : MonoBehaviour
     public void damage(int damage){
         //Check our damage
         CurrentHitPoints -= damage;
-        OnDamage.Invoke(); 
+        OnDamage?.Invoke(); 
 
         //Damage animation? 
     }

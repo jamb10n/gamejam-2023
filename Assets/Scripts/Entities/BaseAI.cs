@@ -6,6 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(AttributeComponent))]
 public class BaseAI : BaseEntityController
 {
+    public List<Vector3> Waypoints;
+
+    public int CurrentWaypoint = 0; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +51,21 @@ public class BaseAI : BaseEntityController
         }
 
         
+    }
+
+
+    protected void WaypointMove()
+    {
+        if (Waypoints.Count < 1) { return; }
+
+        DumbMoveToTarget(Waypoints[CurrentWaypoint]);
+        if (Vector3.Distance(transform.position, Waypoints[CurrentWaypoint]) < 0.1f)
+        {
+            CurrentWaypoint++; 
+            if (CurrentWaypoint >= Waypoints.Count)
+            {
+                CurrentWaypoint = 0;
+            }
+        }
     }
 }

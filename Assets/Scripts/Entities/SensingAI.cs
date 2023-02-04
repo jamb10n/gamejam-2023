@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MovementController))]
+[RequireComponent(typeof(AttributeComponent))]
 public class SensingAI : BaseAI
 {
 
