@@ -48,6 +48,9 @@ MonoBehaviour:
   - Name: Player
     Type: Entities
     Prefab: {fileID: 361711584291431415, guid: 05f7f74a318dd034f80cf981d02df759, type: 3}
+  - Name: Warp
+    Type: Entities
+    Prefab: {fileID: 1404465173946445469, guid: a41e18aa30aadb5408ba0219eb565dec, type: 3}
   - Name: Camera
     Type: Utility
     Prefab: {fileID: 5016697257274779476, guid: 87b36d3da798fc74e945d8e12531e2a8, type: 3}
