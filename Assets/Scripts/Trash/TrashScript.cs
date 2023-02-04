@@ -7,7 +7,7 @@ public class TrashScript : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderer;
 
-    public float FadeRate = 0.01f; 
+    public float FadeRate = 0.05f; 
     // Start is called before the first frame update
     void Start()
     {
