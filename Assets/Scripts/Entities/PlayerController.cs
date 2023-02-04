@@ -20,6 +20,7 @@ public class PlayerController : BaseEntityController
             Destroy(gameObject);
             GameManager.Instance.GameOver(); 
         };
+        AttributeComponent.OnDamage += () => { }; 
     }
 
     // Update is called once per frame

@@ -19,7 +19,12 @@ public class AttributeComponent : MonoBehaviour
     public int AttackPower;
     public float MovementSpeed;
 
-    public float AttackDistance; 
+    public float AttackDistance;
+
+    /// <summary>
+    /// How long between attacks before the entity can attack again. 
+    /// </summary>
+    public int AttackCooldown; 
 
     public faction Faction; 
 

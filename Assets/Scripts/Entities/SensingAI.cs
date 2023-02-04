@@ -16,6 +16,7 @@ public class SensingAI : BaseAI
         {
             Destroy(gameObject);
         };
+        AttributeComponent.OnDamage += () => { };
 
         Target = GameManager.Instance.Player; 
     }
