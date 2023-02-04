@@ -63,7 +63,6 @@ public class AttributeComponent : MonoBehaviour
         }
     }
     public void defBuff(int defIncAmount){
-        //Checks health amount
         DeffPoints += defIncAmount; 
         //are we going over the maximum amount?
         if(DeffPoints>MaxDeffPoints){
@@ -72,13 +71,12 @@ public class AttributeComponent : MonoBehaviour
         }
         else{
             
+
         }
     }
     public void attBuff(int attIncAmount){
         //Checks health amount
         AttackPower +=attIncAmount; 
-
-  
         //are we going over the maximum amount?
         if(AttackPower>MaxAttackPower){
             //set to our maximum then
