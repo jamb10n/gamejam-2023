@@ -55,35 +55,32 @@ public class AttributeComponent : MonoBehaviour
 
     public void healing(int hpIncAmount){
         //Checks health amount
-        int tmpHP = CurrentHitPoints + hpIncAmount; 
-
-  
+        CurrentHitPoints += hpIncAmount; 
         //are we going over the maximum amount?
-        if(tmpHP>MaxHitPoints){
+        if(CurrentHitPoints>MaxHitPoints){
             //set to our maximum then
             CurrentHitPoints=MaxHitPoints;
         }
     }
     public void defBuff(int defIncAmount){
-        //Checks health amount
-        int tempDEF = DeffPoints + defIncAmount; 
-
-  
+        DeffPoints += defIncAmount; 
         //are we going over the maximum amount?
-        if(tempDEF>MaxDeffPoints){
+        if(DeffPoints>MaxDeffPoints){
             //set to our maximum then
-            DeffPoints=tempDEF;
+            DeffPoints=MaxDeffPoints;
+        }
+        else{
+            
+
         }
     }
     public void attBuff(int attIncAmount){
         //Checks health amount
-        int tmpAtt = AttackPower + attIncAmount; 
-
-  
+        AttackPower +=attIncAmount; 
         //are we going over the maximum amount?
-        if(tmpAtt>MaxAttackPower){
+        if(AttackPower>MaxAttackPower){
             //set to our maximum then
-            AttackPower=tmpAtt;
+            AttackPower=MaxAttackPower;
         }
     }
 
