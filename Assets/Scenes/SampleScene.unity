@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 191555707}
   - component: {fileID: 191555706}
   - component: {fileID: 191555705}
+  - component: {fileID: 191555712}
   m_Layer: 0
   m_Name: miniskeleton (1)
   m_TagString: Untagged
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 0}
+  Animator: {fileID: 0}
   attackCooldownTime: 0
   FacingDirection: 0
 --- !u!114 &191555707
@@ -316,6 +318,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &191555712
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191555704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &672776530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1095,7 @@ GameObject:
   - component: {fileID: 1048396833}
   - component: {fileID: 1048396832}
   - component: {fileID: 1048396831}
+  - component: {fileID: 1048396838}
   m_Layer: 0
   m_Name: miniskeleton (2)
   m_TagString: Untagged
@@ -1115,6 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 0}
+  Animator: {fileID: 0}
   attackCooldownTime: 0
   FacingDirection: 0
 --- !u!114 &1048396833
@@ -1254,6 +1278,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1048396838
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048396830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1376225722
 GameObject:
   m_ObjectHideFlags: 0
@@ -11672,6 +11716,7 @@ GameObject:
   - component: {fileID: 1605163427}
   - component: {fileID: 1605163426}
   - component: {fileID: 1605163425}
+  - component: {fileID: 1605163431}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -11692,6 +11737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 0}
+  Animator: {fileID: 0}
   attackCooldownTime: 0
   FacingDirection: 0
 --- !u!114 &1605163426
@@ -11831,6 +11877,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1605163431
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605163424}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1618638928
 GameObject:
   m_ObjectHideFlags: 0
@@ -11846,6 +11912,7 @@ GameObject:
   - component: {fileID: 1618638931}
   - component: {fileID: 1618638930}
   - component: {fileID: 1618638929}
+  - component: {fileID: 1618638936}
   m_Layer: 0
   m_Name: miniskeleton
   m_TagString: Untagged
@@ -11882,6 +11949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 0}
+  Animator: {fileID: 0}
   attackCooldownTime: 0
   FacingDirection: 0
 --- !u!114 &1618638931
@@ -12021,6 +12089,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1618638936
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618638928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1701253500
 GameObject:
   m_ObjectHideFlags: 0
