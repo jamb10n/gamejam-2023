@@ -168,14 +168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHitPoints: 0
-  MaxHitPoints: 10
+  MaxHitPoints: 4
   AttackPower: 1
   MaxAttackPower: 0
   DeffPoints: 0
   MaxDeffPoints: 0
   MovementSpeed: 4
   AttackDistance: 0.9
-  SightRange: 0
+  SightRange: 10
   AttackCooldown: 10
   Faction: 2
 --- !u!114 &5891014262226498900
