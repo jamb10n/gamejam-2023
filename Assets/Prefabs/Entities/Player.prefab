@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attributes: {fileID: 0}
+  attackCooldownTime: 0
   FacingDirection: 0
 --- !u!114 &361711584291431417
 MonoBehaviour:
@@ -179,7 +180,11 @@ MonoBehaviour:
   CurrentHitPoints: 0
   MaxHitPoints: 10
   AttackPower: 1
-  MovementSpeed: 1
+  MaxAttackPower: 0
+  DeffPoints: 0
+  MaxDeffPoints: 0
+  MovementSpeed: 4
   AttackDistance: 0.4
+  SightRange: 0
   AttackCooldown: 10
   Faction: 2
