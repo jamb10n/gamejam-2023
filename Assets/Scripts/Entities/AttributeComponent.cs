@@ -6,6 +6,11 @@ public enum faction{
         NPC, 
         Player
     };
+
+public delegate void OnDeath();
+
+public delegate void OnDamage(); 
+
 public class AttributeComponent : MonoBehaviour
 {
 
@@ -14,8 +19,22 @@ public class AttributeComponent : MonoBehaviour
     public int AttackPower;
     public float MovementSpeed;
 
+    public float AttackDistance;
+
+    /// <summary>
+    /// How far the AI can see. 
+    /// </summary>
+    public float SightRange; 
+
+    /// <summary>
+    /// How long between attacks before the entity can attack again. 
+    /// </summary>
+    public int AttackCooldown; 
+
     public faction Faction; 
 
+    public OnDeath OnDeath;
+    public OnDamage OnDamage;   
  
     // Start is called before the first frame update
     void Start()
@@ -26,34 +45,29 @@ public class AttributeComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CurrentHitPoints <= 0)
+        {
+            OnDeath?.Invoke(); 
+        }
     }
 
     public void healing(int hpIncAmount){
         //Checks health amount
-        int Health= hpIncAmount + CurrentHitPoints;
+        CurrentHitPoints += hpIncAmount; 
+
+  
         //are we going over the maximum amount?
-        if(Health>MaxHitPoints){
+        if(CurrentHitPoints>MaxHitPoints){
             //set to our maximum then
             CurrentHitPoints=MaxHitPoints;
-        }
-        else{
-            //Set to the new health amount
-            CurrentHitPoints=Health;
         }
     }
     public void damage(int damage){
         //Check our damage
-        int Health= CurrentHitPoints - damage;
-        if(Health <= 0){
-            // raise a game over alert
-            
-        }
-        else{
-            //set our new health to the damaged amount
-            CurrentHitPoints=Health;
-            //raise animation
-        }
+        CurrentHitPoints -= damage;
+        OnDamage?.Invoke(); 
+
+        //Damage animation? 
     }
 
     

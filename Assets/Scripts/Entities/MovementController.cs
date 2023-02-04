@@ -6,19 +6,40 @@ using UnityEngine;
 [RequireComponent(typeof(AttributeComponent))]
 public class MovementController : MonoBehaviour
 {
-    public AttributeComponent Attributes; 
+    public AttributeComponent Attributes;
 
-    public MovementDirection Direction;
+    public int attackCooldownTime; 
+
+    MovementDirection direction;
+    public MovementDirection Direction {
+        get { return direction; }
+        set
+        {
+            if (value != MovementDirection.None)
+                FacingDirection = value;
+            direction = value;
+
+        } }
+
+    public MovementDirection FacingDirection; 
 
     // Start is called before the first frame update
     void Start()
     {
         Attributes = GetComponent<AttributeComponent>();
+        attackCooldownTime = 0; 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //can do nothing if in attack cooldown. 
+        if (attackCooldownTime > 0)
+        {
+            attackCooldownTime--;
+            return; 
+        }
+
         switch (Direction) 
         {
             case MovementDirection.Up:
@@ -39,5 +60,27 @@ public class MovementController : MonoBehaviour
             default: break;
 
         }
+    }
+
+    public void Attack()
+    {
+        if (attackCooldownTime > 0)
+            return; 
+
+
+       var hits =  Physics2D.BoxCastAll(transform.position, new Vector2(1, 1), 0, FacingDirection.VectorFromDirection(), Attributes.AttackDistance); 
+        foreach(var hit in hits)
+        {
+            var attribute = hit.rigidbody.gameObject.GetComponent<AttributeComponent>();
+            if (attribute.Faction != Attributes.Faction)
+            {
+                attribute.damage(Attributes.AttackPower); 
+            }
+        }
+        if (hits.Length > 0)
+        {
+            attackCooldownTime = Attributes.AttackCooldown; 
+        }
+
     }
 }

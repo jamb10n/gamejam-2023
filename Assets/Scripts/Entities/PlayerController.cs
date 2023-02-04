@@ -4,13 +4,23 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(MovementController))]
-public class PlayerController : MonoBehaviour
+[RequireComponent(typeof(AttributeComponent))]
+public class PlayerController : BaseEntityController
 {
-    public MovementController MovementController; 
+   
     // Start is called before the first frame update
     void Start()
     {
         MovementController = GetComponent<MovementController>();
+        AttributeComponent= GetComponent<AttributeComponent>();
+
+        AttributeComponent.OnDeath += () =>
+        {
+            transform.DetachChildren(); 
+            Destroy(gameObject);
+            GameManager.Instance.GameOver(); 
+        };
+        AttributeComponent.OnDamage += () => { }; 
     }
 
     // Update is called once per frame
@@ -30,6 +40,10 @@ public class PlayerController : MonoBehaviour
             MovementController.Direction= MovementDirection.Up;
 
         if (movex == 0 && movey == 0)
-            MovementController.Direction = MovementDirection.None; 
+            MovementController.Direction = MovementDirection.None;
+
+        //todo; proper attack key. 
+        if (Input.GetButtonDown("Jump"))
+            MovementController.Attack(); 
     }
 }
