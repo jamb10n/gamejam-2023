@@ -12143,6 +12143,7 @@ MonoBehaviour:
   Background: {fileID: 1422638807}
   Walls: {fileID: 1376225726}
   ForeGround: {fileID: 672776533}
+  LevelMusic: {fileID: 8300000, guid: b3a2ff556f89e724cb845e22419cd177, type: 3}
 --- !u!156049354 &1701253502
 Grid:
   m_ObjectHideFlags: 0
