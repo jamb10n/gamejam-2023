@@ -43,9 +43,16 @@ public class GameManager : MonoBehaviour
         {
             PrefabsDict.Add(prefab.Name, prefab.Prefab); 
         }
-        
+
+        if (Camera == null)
+        {
+            //create new camera here since we somehow lost the old one. 
+            Camera = Instantiate(PrefabsDict["Camera"]).GetComponent<Camera>();
+            DontDestroyOnLoad(Camera);
+        }
         //remove when we have a menu. 
-        StartGame();
+        //StartGame();
+        StartCoroutine(LevelLoad("MainMenu")); 
     }
 
     // Update is called once per frame
@@ -60,6 +67,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LevelLoad(level));
     }
 
+    public static void StartNewGame()
+    {
+        GameManager.Instance.StartGame();
+    }
+
     public void StartGame()
     {
         StartCoroutine(NewGame());
@@ -72,7 +84,8 @@ public class GameManager : MonoBehaviour
         Map = FindObjectOfType<MapScript>();
         yield return StartCoroutine(Map.LoadMap()); 
 
-        Player.transform.position = Map.PlayerSpawn; 
+        if (Player != null)
+            Player.transform.position = Map.PlayerSpawn; 
     }
 
     IEnumerator NewGame()

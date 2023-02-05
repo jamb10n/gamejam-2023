@@ -48,7 +48,7 @@ public class GameUIScript : MonoBehaviour
         var image = GameOverScreen.GetComponent<Image>();
         yield return StartCoroutine(FadeScreenIn(image));
         yield return new WaitForSeconds(10);
-        GameManager.Instance.StartGame(); //change to load menu later on. 
+        GameManager.Instance.LoadLevel("MainMenu"); //change to load menu later on.  
     }
 
     public void ShowVictoryScreen()
@@ -67,7 +67,7 @@ public class GameUIScript : MonoBehaviour
         var image = VictoryScreen.GetComponent<Image>();
         yield return StartCoroutine(FadeScreenIn(image));
         yield return new WaitForSeconds(10);
-        GameManager.Instance.StartGame(); //change to load menu later on. 
+        GameManager.Instance.LoadLevel("MainMenu"); //change to load menu later on. 
     }
 
     IEnumerator FadeScreenIn(Image image)

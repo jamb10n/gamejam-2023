@@ -545,6 +545,7 @@ MonoBehaviour:
   Scenes:
   - Level1
   - Level2
+  - MainMenu
   - othertest
   - SampleScene
   Player: {fileID: 0}

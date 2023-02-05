@@ -42,7 +42,8 @@ public class MapScript : MonoBehaviour
             music.clip = LevelMusic; 
             music.Play();
         }
-        StartCoroutine(WinCheck()); 
+        if (!string.IsNullOrWhiteSpace(NextLevel))
+            StartCoroutine(WinCheck()); 
         //For anything that might need the map script to handle. 
     }
 
