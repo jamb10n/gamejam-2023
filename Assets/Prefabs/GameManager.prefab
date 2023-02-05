@@ -512,12 +512,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefabs:
+  - Name: GuardEnemy
+    Type: Entities
+    Prefab: {fileID: 2298150263649617525, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+  - Name: PatrolEnemy
+    Type: Entities
+    Prefab: {fileID: 2298150263649617525, guid: 9d57c71955d45c04d8db75fb34c0a288, type: 3}
   - Name: Player
     Type: Entities
     Prefab: {fileID: 361711584291431415, guid: 05f7f74a318dd034f80cf981d02df759, type: 3}
+  - Name: RuneGuardEnemy
+    Type: Entities
+    Prefab: {fileID: 2298150263649617525, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
   - Name: Warp
     Type: Entities
     Prefab: {fileID: 1404465173946445469, guid: a41e18aa30aadb5408ba0219eb565dec, type: 3}
+  - Name: Rune
+    Type: Trash
+    Prefab: {fileID: 4298115980620384421, guid: 8324e21bfb3c75045861ba724c3a3e7c, type: 3}
+  - Name: Trash1
+    Type: Trash
+    Prefab: {fileID: 3347822477516944505, guid: 5c55141a3b763274286a5584d6203a94, type: 3}
+  - Name: Trash2
+    Type: Trash
+    Prefab: {fileID: 5795839685608737383, guid: 6e900ed28c0bed3419ac6a553ddeb442, type: 3}
   - Name: Camera
     Type: Utility
     Prefab: {fileID: 5016697257274779476, guid: 87b36d3da798fc74e945d8e12531e2a8, type: 3}
@@ -526,6 +544,7 @@ MonoBehaviour:
     Prefab: {fileID: 3520062977949289267, guid: 81cd49ca24d0d314d910d38f896d43d3, type: 3}
   Scenes:
   - Level1
+  - Level2
   - othertest
   - SampleScene
   Player: {fileID: 0}

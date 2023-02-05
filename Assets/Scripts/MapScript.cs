@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Linq; 
 
 public class MapScript : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class MapScript : MonoBehaviour
 
     public Tilemap ForeGround;
 
-    public AudioClip LevelMusic; 
+    public AudioClip LevelMusic;
+
+
+    public List<GameObject> KillList;
+
+    public string NextLevel; 
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +30,7 @@ public class MapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        KillList.RemoveAll(z => z == null); 
     }
 
     public IEnumerator LoadMap()
@@ -36,7 +42,25 @@ public class MapScript : MonoBehaviour
             music.clip = LevelMusic; 
             music.Play();
         }
+        StartCoroutine(WinCheck()); 
         //For anything that might need the map script to handle. 
+    }
+
+    IEnumerator WinCheck()
+    {
+        while (true)
+        {
+            if (KillList.Count() == 0)
+            {
+                yield return new WaitForSeconds(1); 
+                if (NextLevel == "Victory")
+                    GameManager.Instance.Victory();
+                else
+                    GameManager.Instance.LoadLevel(NextLevel);
+                StopCoroutine(WinCheck());
+            }
+            yield return null;
+        }
     }
 
     public Vector3Int GetTileFromWorldLocation(Vector3 worldLocation)

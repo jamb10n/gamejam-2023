@@ -255,6 +255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+--- !u!1 &444326708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2298150263649617525, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+  m_PrefabInstance: {fileID: 444326707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &456119664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -659,6 +664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+--- !u!1 &1633294125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2298150263649617525, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+  m_PrefabInstance: {fileID: 1633294124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1735355273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,6 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+--- !u!1 &1923837987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2298150263649617525, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+  m_PrefabInstance: {fileID: 1923837986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2133344364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,6 +946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+--- !u!1 &2133344365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2298150263649617525, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+  m_PrefabInstance: {fileID: 2133344364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1201552642786630948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25682,6 +25702,12 @@ MonoBehaviour:
   Walls: {fileID: 1285293816351024548}
   ForeGround: {fileID: 1285293818060844367}
   LevelMusic: {fileID: 8300000, guid: b3a2ff556f89e724cb845e22419cd177, type: 3}
+  KillList:
+  - {fileID: 1633294125}
+  - {fileID: 2133344365}
+  - {fileID: 444326708}
+  - {fileID: 1923837987}
+  NextLevel: Level2
 --- !u!1 &1285293818060844360
 GameObject:
   m_ObjectHideFlags: 0
