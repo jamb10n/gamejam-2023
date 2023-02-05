@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject Player;
 
+    public GameUIScript GameUI; 
+
     /// <summary>
     /// Main camera the game has running, for easy access. 
     /// </summary>
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return; 
         }
-
+        GameUI = GetComponentInChildren<GameUIScript>();
         Instance= this;
         DontDestroyOnLoad(gameObject); //one GameManager always. 
 
@@ -94,11 +96,13 @@ public class GameManager : MonoBehaviour
         Camera.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Camera.transform.position.z);
         Camera.transform.SetParent(Player.transform); 
         yield return null;
-        yield return StartCoroutine(LevelLoad("Level1"));  
+        yield return StartCoroutine(LevelLoad("Level1"));          
+        GameUI.ClearScreens(); 
     }
 
     public void GameOver()
     {
-        Debug.LogError("Game over not yet implemented"); 
+        GameUI.ShowGameOver();
+       // Debug.LogError("Game over not yet implemented"); 
     }
 }
