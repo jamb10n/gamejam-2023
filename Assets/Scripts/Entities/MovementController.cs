@@ -85,8 +85,8 @@ public class MovementController : MonoBehaviour
        var hits =  Physics2D.BoxCastAll(transform.position, new Vector2(1, 1), 0, FacingDirection.VectorFromDirection(), Attributes.AttackDistance); 
         foreach(var hit in hits)
         {
-            var attribute = hit.rigidbody.gameObject.GetComponent<AttributeComponent>();
-            if (attribute.Faction != Attributes.Faction)
+            var attribute = hit.rigidbody?.gameObject?.GetComponent<AttributeComponent>();
+            if (attribute != null && attribute.Faction != Attributes.Faction)
             {
                 attribute.damage(Attributes.AttackPower); 
             }

@@ -17,12 +17,17 @@ public class GuardAI : BaseAI
     {
         MovementController = GetComponent<MovementController>();
         AttributeComponent = GetComponent<AttributeComponent>();
+        SoundEffectController = GetComponent<SoundEffectController>();
 
         AttributeComponent.OnDeath += () =>
         {
+            this.SoundEffectController.PlaySound("OnDeath"); 
             Destroy(gameObject);
         };
-        AttributeComponent.OnDamage += () => { };
+        AttributeComponent.OnDamage += () => 
+        {
+            SoundEffectController.PlaySound("OnDamage");
+        };
 
        
         GuardLocation = transform.position;
@@ -34,7 +39,12 @@ public class GuardAI : BaseAI
     {
         if (Target != null)
         {
-            if (Vector2.Distance(Target.transform.position, transform.position) > AttributeComponent.SightRange
+            if (Vector2.Distance(Target.transform.position, transform.position) < AttributeComponent.AttackDistance)
+            {
+                MovementController.Attack();
+                SoundEffectController.PlaySound("HAttack"); 
+            }
+            else if (Vector2.Distance(Target.transform.position, transform.position) > AttributeComponent.SightRange
                 || Vector2.Distance(transform.position, GuardLocation) > MaxWander)
             {
                 Target = null;

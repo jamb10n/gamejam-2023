@@ -9,6 +9,7 @@ public class BaseEntityController : MonoBehaviour
 
     public MovementController MovementController;
     public AttributeComponent AttributeComponent;
+    public SoundEffectController SoundEffectController; 
     // Start is called before the first frame update
     void Start()
     {

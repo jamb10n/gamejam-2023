@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(AttributeComponent))]
+[RequireComponent(typeof(SoundEffectController))]
 public class PlayerController : BaseEntityController
 {
    
@@ -13,14 +14,19 @@ public class PlayerController : BaseEntityController
     {
         MovementController = GetComponent<MovementController>();
         AttributeComponent= GetComponent<AttributeComponent>();
+        SoundEffectController = GetComponent<SoundEffectController>();
 
         AttributeComponent.OnDeath += () =>
         {
+            SoundEffectController.PlaySound("OnDeath"); 
             transform.DetachChildren(); 
             Destroy(gameObject);
             GameManager.Instance.GameOver(); 
         };
-        AttributeComponent.OnDamage += () => { }; 
+        AttributeComponent.OnDamage += () => 
+        {
+            SoundEffectController.PlaySound("OnDamage"); 
+        }; 
     }
 
     // Update is called once per frame
@@ -44,6 +50,9 @@ public class PlayerController : BaseEntityController
 
         //todo; proper attack key. 
         if (Input.GetButtonDown("Jump"))
-            MovementController.Attack(); 
+        {
+            MovementController.Attack();
+            SoundEffectController.PlaySound("HAttack"); 
+        }
     }
 }

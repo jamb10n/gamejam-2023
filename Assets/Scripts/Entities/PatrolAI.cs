@@ -15,12 +15,16 @@ public class PatrolAI : BaseAI
     {
         MovementController = GetComponent<MovementController>();
         AttributeComponent = GetComponent<AttributeComponent>();
+        SoundEffectController= GetComponent<SoundEffectController>();
 
         AttributeComponent.OnDeath += () =>
         {
+            SoundEffectController.PlaySound("OnDeath");
             Destroy(gameObject);
         };
-        AttributeComponent.OnDamage += () => { };
+        AttributeComponent.OnDamage += () => {
+            SoundEffectController.PlaySound("OnDamage");
+        };
 
         if (Waypoints.Count == 0) 
         {
@@ -33,7 +37,12 @@ public class PatrolAI : BaseAI
     {
         if (Target != null)
         {
-            if (Vector2.Distance(Target.transform.position, transform.position) > AttributeComponent.SightRange
+            if (Vector2.Distance(Target.transform.position, transform.position) < AttributeComponent.AttackDistance)
+            {
+                MovementController.Attack();
+                SoundEffectController.PlaySound("HAttack");
+            }
+            else if (Vector2.Distance(Target.transform.position, transform.position) > AttributeComponent.SightRange
                 || (MaxWander > 0 && Vector2.Distance(transform.position, Waypoints[CurrentWaypoint]) > MaxWander))
             {
                 Target = null;
