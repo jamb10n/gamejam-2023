@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(SoundEffectController))]
 public class TrashScript : MonoBehaviour
 {
     public SpriteRenderer SpriteRenderer;
+    public SoundEffectController SoundEffectController; 
 
     public float FadeRate = 0.05f; 
     // Start is called before the first frame update
     void Start()
     {
         SpriteRenderer= GetComponent<SpriteRenderer>();
+        SoundEffectController= GetComponent<SoundEffectController>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class TrashScript : MonoBehaviour
     IEnumerator FadeObject()
     {
         yield return null;
+        SoundEffectController.PlaySound("Crumple"); 
         while (SpriteRenderer.color.a > 0)
         {
             SpriteRenderer.color 
