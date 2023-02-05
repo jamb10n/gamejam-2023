@@ -11,7 +11,9 @@ public class MapScript : MonoBehaviour
 
     public Tilemap Walls;
 
-    public Tilemap ForeGround; 
+    public Tilemap ForeGround;
+
+    public AudioClip LevelMusic; 
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,12 @@ public class MapScript : MonoBehaviour
     public IEnumerator LoadMap()
     {
         yield return null;
-
+        var music = GameManager.Instance.Camera.GetComponent<AudioSource>();
+        if (music != null)
+        {
+            music.clip = LevelMusic; 
+            music.Play();
+        }
         //For anything that might need the map script to handle. 
     }
 

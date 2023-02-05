@@ -49,7 +49,7 @@ public class GuardAI : BaseAI
         else
         {
             var colliders = Physics2D.OverlapCircleAll(transform.position, AttributeComponent.SightRange);
-            Target = colliders.FirstOrDefault(z => z.GetComponent<AttributeComponent>()?.Faction != AttributeComponent.Faction)?.gameObject; 
+            Target = colliders.FirstOrDefault(z => z.GetComponent<AttributeComponent>() != null && z.GetComponent<AttributeComponent>()?.Faction != AttributeComponent.Faction)?.gameObject; 
         }
         
 

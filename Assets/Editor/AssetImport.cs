@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class AssetImport : MonoBehaviour
 {
@@ -73,5 +74,69 @@ public class AssetImport : MonoBehaviour
         EditorBuildSettings.scenes = scenes.ToArray();
          
     }
-        
+    #region Import Sprites
+
+    [MenuItem("AssetImport/Import Sprites")]
+    public static void ImportCharacterSprites()
+    {
+        string direct = "Assets/Resources/Entities";
+        var files = Directory.GetFiles(direct)
+                .Where(x => new string[] { ".png", ".jpg" }.Contains(Path.GetExtension(x))).ToList();
+
+        foreach (var file in files)
+        {
+            GenerateAnimations(file);
+        }
+
+    }
+
+    static void GenerateAnimations(string file)
+    {
+        var sprites = AssetDatabase.LoadAllAssetsAtPath(file).Where(z => z is Sprite).Cast<Sprite>().ToList();
+
+        var name = Path.GetFileNameWithoutExtension(file);
+
+        var asset = ScriptableObject.CreateInstance<SpriteLibraryAsset>();
+
+        for (int idx = 0; idx < 8; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "walkleft", $"left{idx}"); 
+        }
+
+        for (int idx = 8; idx < 16; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "walkright", $"right{idx}");
+        }
+        for (int idx = 16; idx < 24; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "walkup", $"up{idx}");
+        }
+        for (int idx = 24; idx < 32; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "walkdown", $"down{idx}");
+        }
+        for (int idx = 32; idx < 40; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "attleft", $"atleft{idx}");
+        }
+        for (int idx = 40; idx < 48; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "attright", $"atright{idx}");
+        }
+        for (int idx = 48; idx < 56; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "attup", $"atup{idx}");
+        }
+        for (int idx = 56; idx < 64; idx++)
+        {
+            asset.AddCategoryLabel(sprites[idx], "attdown", $"atdown{idx}");
+        }
+
+        AssetDatabase.CreateAsset(asset, AssetDatabase.GenerateUniqueAssetPath("Assets/SpriteLibraries/" + $"{name}Library.asset"));
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        EditorUtility.SetDirty(asset);
+    }
+
+    #endregion
 }

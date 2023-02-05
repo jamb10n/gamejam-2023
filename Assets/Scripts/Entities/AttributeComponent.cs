@@ -17,8 +17,10 @@ public class AttributeComponent : MonoBehaviour
     public int CurrentHitPoints;
     public int MaxHitPoints;
     public int AttackPower;
+    public int MaxAttackPower;
+    public int DeffPoints;
+    public int MaxDeffPoints;
     public float MovementSpeed;
-
     public float AttackDistance;
 
     /// <summary>
@@ -54,17 +56,40 @@ public class AttributeComponent : MonoBehaviour
     public void healing(int hpIncAmount){
         //Checks health amount
         CurrentHitPoints += hpIncAmount; 
-
-  
         //are we going over the maximum amount?
         if(CurrentHitPoints>MaxHitPoints){
             //set to our maximum then
             CurrentHitPoints=MaxHitPoints;
         }
     }
+    public void defBuff(int defIncAmount){
+        DeffPoints += defIncAmount; 
+        //are we going over the maximum amount?
+        if(DeffPoints>MaxDeffPoints){
+            //set to our maximum then
+            DeffPoints=MaxDeffPoints;
+        }
+        else{
+            
+
+        }
+    }
+    public void attBuff(int attIncAmount){
+        //Checks health amount
+        AttackPower +=attIncAmount; 
+        //are we going over the maximum amount?
+        if(AttackPower>MaxAttackPower){
+            //set to our maximum then
+            AttackPower=MaxAttackPower;
+        }
+    }
+
     public void damage(int damage){
         //Check our damage
-        CurrentHitPoints -= damage;
+        int tempDMG = damage - DeffPoints;
+        if(tempDMG > 0){
+            CurrentHitPoints-= tempDMG;
+        }
         OnDamage?.Invoke(); 
 
         //Damage animation? 

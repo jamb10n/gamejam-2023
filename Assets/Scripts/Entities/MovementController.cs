@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AttributeComponent))]
 public class MovementController : MonoBehaviour
 {
     public AttributeComponent Attributes;
+
+    public Animator Animator; 
 
     public int attackCooldownTime; 
 
@@ -28,6 +31,7 @@ public class MovementController : MonoBehaviour
     {
         Attributes = GetComponent<AttributeComponent>();
         attackCooldownTime = 0; 
+        Animator= GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,25 +43,35 @@ public class MovementController : MonoBehaviour
             attackCooldownTime--;
             return; 
         }
-
+        Animator.SetBool("IsAttacking", false); 
         switch (Direction) 
         {
             case MovementDirection.Up:
+                Animator.SetBool("IsWalking", true);
+                Animator.SetInteger("Direction", 1); 
                 transform.position += new Vector3(0, Attributes.MovementSpeed,  0) * Time.deltaTime; 
                 break; 
                 
             case MovementDirection.Down:
+                Animator.SetBool("IsWalking", true);
+                Animator.SetInteger("Direction", 3);
                 transform.position += new Vector3(0, -Attributes.MovementSpeed,  0) * Time.deltaTime;
                 break; 
             case MovementDirection.Left:
+                Animator.SetBool("IsWalking", true);
+                Animator.SetInteger("Direction", 0);
                 transform.position += new Vector3(-Attributes.MovementSpeed, 0, 0) * Time.deltaTime;
                 break; 
             case MovementDirection.Right:
+                Animator.SetBool("IsWalking", true);
+                Animator.SetInteger("Direction", 2);
                 transform.position += new Vector3(Attributes.MovementSpeed, 0, 0) * Time.deltaTime;
                 break;
                 
-            case MovementDirection.None:   
-            default: break;
+            case MovementDirection.None:  
+            default:
+                Animator.SetBool("IsWalking", false);
+                break;
 
         }
     }
@@ -81,6 +95,6 @@ public class MovementController : MonoBehaviour
         {
             attackCooldownTime = Attributes.AttackCooldown; 
         }
-
+        Animator.SetBool("IsAttacking", true); 
     }
 }

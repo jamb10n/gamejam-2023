@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         Camera.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Camera.transform.position.z);
         Camera.transform.SetParent(Player.transform); 
         yield return null;
-        yield return StartCoroutine(LevelLoad(Scenes[0]));  
+        yield return StartCoroutine(LevelLoad("Level1"));  
     }
 
     public void GameOver()
