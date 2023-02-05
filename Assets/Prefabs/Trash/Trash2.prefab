@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 0}
+  SoundEffectController: {fileID: 0}
   FadeRate: 0.05
 --- !u!82 &4351491594665295410
 AudioSource:

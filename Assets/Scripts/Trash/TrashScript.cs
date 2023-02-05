@@ -31,7 +31,7 @@ public class TrashScript : MonoBehaviour
     IEnumerator FadeObject()
     {
         yield return null;
-        SoundEffectController.PlaySound("Crumple"); 
+        SoundEffectController.PlaySound("Fade"); 
         while (SpriteRenderer.color.a > 0)
         {
             SpriteRenderer.color 
