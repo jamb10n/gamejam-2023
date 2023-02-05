@@ -57,7 +57,8 @@ public class MapScript : MonoBehaviour
                     GameManager.Instance.Victory();
                 else
                     GameManager.Instance.LoadLevel(NextLevel);
-                StopCoroutine(WinCheck());
+                
+                break; 
             }
             yield return null;
         }
