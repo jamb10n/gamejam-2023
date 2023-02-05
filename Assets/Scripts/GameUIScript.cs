@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class GameUIScript : MonoBehaviour
 {
     public AudioClip GameOverSong; 
+    public AudioClip VictorySong;
 
-    public GameObject GameOverScreen; 
+    public GameObject GameOverScreen;
+
+    public GameObject VictoryScreen; 
     // Start is called before the first frame update
     void Start()
     {
-        
-        GameOverScreen.SetActive(false);
+        ClearScreens();
+       // GameOverScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class GameUIScript : MonoBehaviour
     public void ClearScreens()
     {
         GameOverScreen.SetActive(false);
+        VictoryScreen.SetActive(false);
     }
 
     public void ShowGameOver()
@@ -43,7 +47,26 @@ public class GameUIScript : MonoBehaviour
         GameOverScreen.SetActive(true);
         var image = GameOverScreen.GetComponent<Image>();
         yield return StartCoroutine(FadeScreenIn(image));
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(10);
+        GameManager.Instance.StartGame(); //change to load menu later on. 
+    }
+
+    public void ShowVictoryScreen()
+    {
+        StartCoroutine(VictoryScreenRun()); 
+    }
+    IEnumerator VictoryScreenRun()
+    {
+        var music = GameManager.Instance.Camera.GetComponent<AudioSource>();
+        if (music != null && VictorySong != null)
+        {
+            music.clip = VictorySong;
+            music.Play();
+        }
+        VictoryScreen.SetActive(true);
+        var image = VictoryScreen.GetComponent<Image>();
+        yield return StartCoroutine(FadeScreenIn(image));
+        yield return new WaitForSeconds(10);
         GameManager.Instance.StartGame(); //change to load menu later on. 
     }
 

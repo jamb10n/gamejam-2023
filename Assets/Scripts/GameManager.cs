@@ -105,4 +105,9 @@ public class GameManager : MonoBehaviour
         GameUI.ShowGameOver();
        // Debug.LogError("Game over not yet implemented"); 
     }
+
+    public void Victory()
+    {
+        GameUI.ShowVictoryScreen();
+    }
 }
