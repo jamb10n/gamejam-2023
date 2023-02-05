@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -273,6 +277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrolEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 9d57c71955d45c04d8db75fb34c0a288, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 9d57c71955d45c04d8db75fb34c0a288, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -330,6 +338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -506,6 +518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -596,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuneGuardEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -786,6 +806,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8348231918922290765, guid: 7fb6c7056ba58cf43a6f9cf1559b1897, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb6c7056ba58cf43a6f9cf1559b1897, type: 3}
 --- !u!1 &1198703573 stripped
@@ -812,6 +836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuneGuardEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: d0ba5a64be5b9f944bab50440d6b251d, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -936,6 +964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -993,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1178,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder
       value: 13

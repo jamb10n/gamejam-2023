@@ -754,16 +754,20 @@ PrefabInstance:
       value: GuardEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1460089359, guid: 69f7b320a794d30498777a35d04dbda9, type: 3}
+    - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2298150263649617527, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2298150263649617528, guid: 057c105407757d041bef583ee4e427a5, type: 3}
       propertyPath: m_RootOrder

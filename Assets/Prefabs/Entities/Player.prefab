@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 11400000, guid: 2227e0d4b01bb45418ec660239addaaa, type: 2}
+  m_SpriteLibraryAsset: {fileID: 11400000, guid: bd6add0fe41eb8d4da3d17f418fe5870, type: 2}
 --- !u!95 &-2590808737735453028
 Animator:
   serializedVersion: 5
